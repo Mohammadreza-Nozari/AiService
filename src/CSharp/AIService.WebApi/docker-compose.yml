@@ -1,0 +1,16 @@
+services:
+    api:
+        build:
+          context: ../../..
+          dockerfile: src/CSharp/AIService.WebApi/Dockerfile
+        ports:
+            - "9999:80"
+        environment:
+            - ASPNETCORE_URLS=http://+:80
+        depends_on:
+            - db
+    db:
+        image: "mcr.microsoft.com/mssql/server"
+        environment:
+            SA_PASSWORD: "CF@!1234FC6549"
+            ACCEPT_EULA: "Y"

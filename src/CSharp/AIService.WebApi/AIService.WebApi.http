@@ -1,0 +1,6 @@
+@AIService.WebApi_HostAddress = http://localhost:5134
+
+GET {{AIService.WebApi_HostAddress}}/bot/
+Accept: application/json
+
+###
